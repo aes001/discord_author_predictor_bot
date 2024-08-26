@@ -22,7 +22,7 @@ module.exports = {
             const response = await axios.get(process.env.PREDICT_API_URL, {
                 params: {
                     text: interaction.options.getString('text'),
-                    id: 0
+                    id: process.env.MODEL_ID
                 }
             });
 
@@ -56,7 +56,7 @@ module.exports = {
         } catch (err) {
             console.log(err);
             await interaction.reply(
-                'Uh oh! I encountered an error while trying to predict the text. Please try again later.'
+                'Neigh! I encountered an error while trying to predict the text. Please contact your nearest raccoon or try again later.'
             );
         }
     }
